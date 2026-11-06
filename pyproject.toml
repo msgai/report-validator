@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "db-validator"
+version = "1.0.0"
+description = "A high-performance validation runner comparing data dumps across SQL and ClickHouse (or other databases) with tolerance, composite keys, duplicate group handling, and diff reporting."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "DB Validator Contributors" }
+]
+keywords = ["database", "validation", "migration", "clickhouse", "sql", "data-integrity"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "PyYAML>=6.0",
+    "colorama>=0.4.6",
+    "python-dateutil>=2.8.2",
+    "openpyxl>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "flake8>=6.0.0",
+    "black>=23.0.0",
+]
+
+[project.scripts]
+db-validator = "migration_comparator:main"
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]

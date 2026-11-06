@@ -1,0 +1,55 @@
+# ==============================================================================
+# Database Migration Validator - Configuration Template
+# ==============================================================================
+
+# Directory where source (e.g. SQL) and target (e.g. ClickHouse) dump files reside.
+# Automatically expands '~' to the user's home directory.
+downloads_dir: "~/Desktop/sql_ch_dumps"
+
+# Directory where comparison discrepancy diff CSVs and debug JSON logs are written.
+output_dir: "~/Desktop/comparison_reports"
+
+# Relative and absolute floating-point comparison tolerance (e.g. 1e-5).
+float_tolerance: 1e-5
+
+# ------------------------------------------------------------------------------
+# Tables to Validate
+# ------------------------------------------------------------------------------
+# Supported file formats: "json" (default), "csv", "xlsx" / "xls".
+#
+# Optional per-table settings:
+#   - file_format: "json" | "csv" | "xlsx" (default: "json")
+#   - count_duplicate_records: true | false (default: false)
+#       When true, duplicate composite primary keys are grouped and compared
+#       record-by-record rather than aborting.
+#   - check_row_order: true | false (default: false)
+#       When true, verifies that source and target maintain identical row order.
+#   - exclude_null_primary_key_rows: true | false (default: false)
+#       When true, rows with NULL in any primary key column are excluded from
+#       comparison and logged to a debug JSON file.
+# ------------------------------------------------------------------------------
+tables:
+  # Example 1: JSON format with composite primary keys
+  - table_name: "users"
+    sql_file: "users_sql.json"
+    ch_file: "users_ch.json"
+    primary_keys: ["id", "tenant_id"]
+    file_format: "json"
+
+  # Example 2: CSV format with duplicate record handling and row order verification
+  - table_name: "events_log"
+    sql_file: "events_sql.csv"
+    ch_file: "events_ch.csv"
+    primary_keys: ["event_id", "timestamp"]
+    file_format: "csv"
+    count_duplicate_records: true
+    check_row_order: true
+
+  # Example 3: Excel (XLSX) format with NULL primary-key row exclusion
+  - table_name: "product_catalog"
+    sql_file: "products_sql.xlsx"
+    ch_file: "products_ch.xlsx"
+    primary_keys: ["sku"]
+    file_format: "xlsx"
+    exclude_null_primary_key_rows: true
+    check_row_order: false

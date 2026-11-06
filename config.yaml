@@ -1,0 +1,285 @@
+# Folder settings (expands ~ automatically)
+downloads_dir: "~/Desktop/sql_ch_dumps"
+output_dir: "~/Desktop/comparison_reports"
+
+# Comparison tolerance settings
+float_tolerance: 1e-5
+
+# Table definitions and composite keys
+# Add file_format: csv or xlsx to a table entry to compare CSV or Excel files. The default is json.
+tables:
+  # - table_name: "transformed_data"
+  #   sql_file: "transformed_data_rohit_live_feb_02_sql.json"
+  #   ch_file: "transformed_data_rohit_live_feb_02_ch.json"
+  #   primary_keys: ["uuid", "recordId", "messageId"]
+
+  # - table_name: "conversation_metadata"
+  #   sql_file: "conv_metadata_mehulzendesk_sql.json"
+  #   ch_file: "conv_metadata_mehulzendesk_ch.json"
+  #   primary_keys: ["botId", "conversationId","channel", "startTime"]
+
+  # - table_name: "conversation_aggregate_v2"
+  #   sql_file: "conversation_aggregate_v2_sql.json"
+  #   ch_file: "conversation_aggregate_v2_ch.json"
+  #   primary_keys: ["dateHour", "customAttribute", "botReferenceId", "supportedLanguage"]
+
+  # - table_name: "conversation_aggregate"
+  #   sql_file: "conversation_aggregate_rohit_sb_sql.json"
+  #   ch_file: "conversation_aggregate_rohit_sb_ch.json"
+  #   primary_keys: ["conversationId", "dateHour", "botId", "env"]
+  #   count_duplicate_records: true
+
+  # - table_name: "bot_conversation_metrics"
+  #   sql_file: "bot_conversation_metrics_sql.json"
+  #   ch_file: "bot_conversation_metrics_ch.json"
+  #   primary_keys: ["observationId"]
+
+  # - table_name: "bot_conversation_metrics_aggregate"
+  #   sql_file: "bot_conversation_metrics_aggregate_sql.json"
+  #   ch_file: "bot_conversation_metrics_aggregate_ch.json"
+  #   primary_keys: ["botId", "env", "dateHour", "feature", "useCase", "modelName"]
+
+  # - table_name: "topic_handoff_aggregate"
+  #   sql_file: "topic_handoff_aggregate_sql.json"
+  #   ch_file: "topic_handoff_aggregate_ch.json"
+  #   primary_keys: ["botId", "dateHour", "channel", "env", "intentId", "skillId"]
+  
+  # - table_name: "feedback_survey"
+  #   sql_file: "feedback_survey_vijitncw_sql.json"
+  #   ch_file: "feedback_survey_vijitncw_ch.json"
+  #   primary_keys: ["uuid"]
+
+    # - table_name: "voice_billing"
+    #   sql_file: "voice_billing_sql.json"
+    #   ch_file: "voice_billing_ch.json"
+    #   primary_keys: ["sessionId"]
+
+    # - table_name: "guardrails_aggregate"
+    #   sql_file: "guardrails_aggregate_sql.json"
+    #   ch_file: "guardrails_aggregate_ch.json"
+    #   primary_keys: ["dateHour", "botReferenceId", "name", "type", "triggeredCnt"]  
+    #   count_duplicate_records: true
+
+    # - table_name: "conv_themes_aggregate"
+    #   sql_file: "conv_themes_aggregate_sql.json"
+    #   ch_file: "conv_themes_aggregate_ch.json"
+    #   primary_keys: ["dateHour", "botReferenceId"] 
+    #   count_duplicate_records: true 
+
+    # - table_name: "sop_aggregates"
+    #   sql_file: "sop_aggregates_sql.json"
+    #   ch_file: "sop_aggregates_ch.json"
+    #   primary_keys: ["botReferenceId", "dateHour", "updatedAt", "sumTimeSecs"]
+    #   count_duplicate_records: true
+
+    # - table_name: "sop_execution_aggregates"
+    #   sql_file: "sop_execution_aggregates_sql.json"
+    #   ch_file: "sop_execution_aggregates_ch.json"
+    #   primary_keys: ["botReferenceId", "conversationId", "startTime", "endTime"]
+    #   count_duplicate_records: true
+
+    # - table_name: "sop_tool_aggregate"
+    #   sql_file: "sop_tool_aggregate_sql.json"
+    #   ch_file: "sop_tool_aggregate_ch.json"
+    #   primary_keys: ["botReferenceId", "dateHour", ]
+    #   count_duplicate_records: true
+
+    # - table_name: "action_survey"
+    #   sql_file: "action_survey_sql.json"
+    #   ch_file: "action_survey_ch.json"
+    #   primary_keys: ["botReferenceId", "dateHour", "conversationId", "requestId"]
+    #   count_duplicate_records: true
+    
+    # - table_name: "widget_configuration"
+    #   sql_file: "widget_configuration_sql.json"
+    #   ch_file: "widget_configuration_ch.json"
+    #   primary_keys: ["createdAt", "botId"]
+
+  # - table_name: "agent_details"
+  #   sql_file: "agent_details_sql.json"
+  #   ch_file: "agent_details_ch.json"
+  #   primary_keys: ["botId", "env","channel"]
+  #   count_duplicate_records: true
+
+  # - table_name: "agent_user_interaction"
+  #   sql_file: "agent_user_interaction_sql.json"
+  #   ch_file: "agent_user_interaction_ch.json"
+  #   primary_keys: ["conversationId", "requestId", "botId", "botReferenceId", "env", "channel"]
+
+  # - table_name: "bot_dashboard_association"
+  #   sql_file: "bot_dashboard_association_sql.json"
+  #   ch_file: "bot_dashboard_association_ch.json"
+  #   primary_keys: ["botId", "dashboardId", "reportName", "createdAt", "isActive"]
+  #   count_duplicate_records: true
+
+  # - table_name: "botId_timezone_mapping"
+  #   sql_file: "botidtomezonemappingsfunified_sql.json"
+  #   ch_file: "botidtomezonemappingsfunified_ch.json"
+  #   primary_keys: ["id"]
+
+  # - table_name: "topic_workflow_diagnostics"
+  #   sql_file: "topic_workflow_diagnostics_mehul_live_sql.json"
+  #   ch_file: "topic_workflow_diagnostics_mehul_live_ch.json"
+  #   primary_keys: ["id"]
+
+  # - table_name: "answernet_actions"
+  #   sql_file: "answernet_actions_delta_sb_sql.json"
+  #   ch_file: "answernet_actions_delta_sb_ch.json"
+  #   primary_keys: ["id", "conversationId"]
+
+  # - table_name: "classification_aggregate"
+  #   sql_file: "classification_aggregate_sql.json"
+  #   ch_file: "classification_aggregate_ch.json"
+  #   primary_keys: ["botReferenceId", "dateHour", "exchangeSubCategory", "messageCount", "uniqueMessageCount"]
+  #   count_duplicate_records: true
+
+  # - table_name: "audiocodes_botname_env_mapping"
+  #   sql_file: "audiocodes_botname_env_mapping_sql.json"
+  #   ch_file: "audiocodes_botname_env_mapping_ch.json"
+  #   primary_keys: ["botName", "env", "region", "createdAt"]
+
+  # - table_name: "cid_to_external_cid_mapping"
+  #   sql_file: "cid_to_external_cid_mapping_sql.json"
+  #   ch_file: "cid_to_external_cid_mapping_ch.json"
+  #   primary_keys: ["id"]
+
+  # - table_name: "transformed_multi_intent_data_sql"
+  #   sql_file: "transformed_multi_intent_data_sql.json"
+  #   ch_file: "transformed_multi_intent_data_ch.json"
+  #   primary_keys: ["uuid"]
+
+  # - table_name: "asset_data"
+  #   sql_file: "asset_data_sf_sql.json"
+  #   ch_file: "asset_data_sf_ch.json"
+  #   primary_keys: ["id"]
+
+  # - table_name: "Conversation_Data_Report"
+  #   sql_file: "CD_rohit_sql.csv"
+  #   ch_file: "CD_rohit_ch.csv"
+  #   primary_keys: ["Exchange ID", "Conversation ID", "Timestamp"]
+  #   file_format: csv 
+  #   count_duplicate_records: true
+  #   check_row_order: true
+
+  - table_name: "Knowledge_Response"
+    sql_file: "KR_report_03.csv"
+    ch_file: "KR_export_03.csv"
+    primary_keys: ["Conversation ID", "Timestamp"]
+    file_format: csv 
+    count_duplicate_records: true
+    check_row_order: true
+
+  # - table_name: "Playbook"
+  #   sql_file: "PlaybooksReport_sql.csv"
+  #   ch_file: "PlaybooksReport_ch.csv"
+  #   primary_keys: ["Playbook", "Volume"]
+  #   file_format: csv 
+  #   count_duplicate_records: true
+  #   check_row_order: true
+
+  # - table_name: "Call_Details"
+  #   sql_file: "CallDetailsReport_Delta_Air_Lines_Voice_sql.csv"
+  #   ch_file: "CallDetailsReport_Delta_Air_Lines_Voice_ch.csv"
+  #   primary_keys: ["Conversation ID", "Client Phone Number", "Caller Phone number"]
+  #   file_format: csv 
+  #   count_duplicate_records: true
+  #   check_row_order: true
+
+  # - table_name: "Agentic"
+  #   sql_file: "agentic_sf_sb_sql.xlsx"
+  #   ch_file: "agentic_sf_sb_ch.xlsx"
+  #   primary_keys: ["Top level Category", "Theme Name", "Volume"]
+  #   file_format: xlsx 
+  #   exclude_null_primary_key_rows: true
+  #   check_row_order: true
+  #   count_duplicate_records: true
+
+  # - table_name: "Customer_Feedback"
+  #   sql_file: "feedback_rohit_sb_sql.xlsx"
+  #   ch_file: "feedback_rohit_sb_ch.xlsx"
+  #   primary_keys: ["Conversation ID", "Timestamp"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+
+  # - table_name: "Customer_Survey"
+  #   sql_file: "survey_delta_live_sql.xlsx"
+  #   ch_file: "survey_delta_live_ch.xlsx"
+  #   primary_keys: ["Conversation ID"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+
+  # - table_name: "Topic_Analysis"
+  #   sql_file: "topic_analysis_sf_live_sql.xlsx"
+  #   ch_file: "topic_analysis_sf_live_ch.xlsx"
+  #   primary_keys: ["Topic Name", "Topic Key", "Topic Type"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+  #   exclude_null_primary_key_rows: true
+
+  # - table_name: "Goal_Completion"
+  #   sql_file: "goal_rohit_sb_sql.xlsx"
+  #   ch_file: "goal_rohit_sb_ch.xlsx"
+  #   primary_keys: ["Goal Name"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+
+  # - table_name: "Agent_Assist"
+  #   sql_file: "agent_assist_rohit_sb_sql.xlsx"
+  #   ch_file: "agent_assist_rohit_sb_ch.xlsx"
+  #   primary_keys: ["Conversation ID", "Message ID"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+
+  # - table_name: "No_Category"
+  #   sql_file: "no_category_rohit_sb_sql.xlsx"
+  #   ch_file: "no_category_rohit_sb_ch.xlsx"
+  #   primary_keys: ["Date", "User query"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+    # exclude_null_primary_key_rows: true
+
+  # - table_name: "Deflection_Analysis"
+  #   sql_file: "deflection_sf_sb_sql.xlsx"
+  #   ch_file: "deflection_sf_sb_ch.xlsx"
+  #   primary_keys: ["Human Handoff reason", "Classification Category", "Topic"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+  #   exclude_null_primary_key_rows: true
+
+  # - table_name: "Classification_Analysis"
+  #   sql_file: "classification_analysis_sf_live_sql.xlsx"
+  #   ch_file: "classification_analysis_sf_live_ch.xlsx"
+  #   primary_keys: ["Classification Category", "Topic / Question"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+  #   exclude_null_primary_key_rows: true
+
+  # - table_name: "Agent_Feedback"
+  #   sql_file: "agent_feedback_sf_sb_sql.xlsx"
+  #   ch_file: "agent_feedback_sf_sb_ch.xlsx"
+  #   primary_keys: ["Topic Name", "Category Name"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+
+  # - table_name: "Unclassified"
+  #   sql_file: "lego_sql.csv"
+  #   ch_file: "lego_report.csv"
+  #   primary_keys: ["Timestamp", "Conversation ID"]
+  #   file_format: csv 
+  #   count_duplicate_records: true
+    # check_row_order: true
+
+  # - table_name: "Agent_Assist"
+  #   sql_file: "EU_Bot_Agent_Assist_re.xlsx"
+  #   ch_file: "EU_Bot_Agent_Assist_ex.xlsx"
+  #   primary_keys: ["Conversation ID", "Message ID"]
+  #   file_format: xlsx 
+  #   check_row_order: true
+
+  # - table_name: "Keywords"
+  #   sql_file: "keywords_delta_live_sql.xlsx"
+  #   ch_file: "keywords_delta_live_ch.xlsx"
+  #   primary_keys: ["User query"]
+  #   file_format: xlsx 
+  #   count_duplicate_records: true
+  #   check_row_order: true
